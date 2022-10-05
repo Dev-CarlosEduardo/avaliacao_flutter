@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text('Create account'),
                 style: ElevatedButton.styleFrom(
                   shape: StadiumBorder(),
-                  // backgroundColor: Color(0xff6B4EFF),
+                  backgroundColor: Color(0xff6B4EFF),
                   padding: EdgeInsets.all(20),
                 ),
               ),

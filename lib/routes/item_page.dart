@@ -1,3 +1,4 @@
+import 'package:avaliacaoflutter/routes/profile_page.dart';
 import 'package:avaliacaoflutter/widgets/house_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,40 +14,61 @@ class _ItemPageState extends State<ItemPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        actions: [
+          Image.asset("lib/assets/vector.png"),
+        ],
+        title: Text(
+          'All items',
+          style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Poppins',
+              color: Colors.black),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 18,
+          ),
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: ((context) => ProfilePage())));
+          },
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: SizedBox(
-        width: 200,
         child: Consumer<HouseCache>(
           builder: (context, cache, _) {
             return ListView.builder(
               itemCount: cache.list.length,
               itemBuilder: (context, index) {
                 return SizedBox(
-                  width: 238,
-                  height: 141,
-                  child: ListTile(
-                    leading: Image.asset(cache.list[index].image),
-                    title: Text(
-                      "${cache.list[index].description}}",
-                      style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    subtitle: Text(
-                      "${cache.list[index].description}",
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Color.fromARGB(0xFF, 0x40, 0xBF, 0xFF),
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    onTap: () {
-                      // cache.index = index;
-                      // _open(context);
-                    },
-                  ),
-                );
+                    width: 158,
+                    height: 186,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: Image.asset(cache.list[index].image),
+                          title: Text(
+                            "${cache.list[index].description}",
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          onTap: () {
+                            // cache.index = index;
+                            // _open(context);
+                          },
+                        ),
+                      ],
+                    ));
               },
             );
           },

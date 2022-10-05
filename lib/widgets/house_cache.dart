@@ -8,35 +8,35 @@ class HouseCache {
   final List<House> _houses = [
     const House(
       'lib/assets/img1.png',
-      'Descrição',
+      'Home Decor Ideas',
     ),
     const House(
-      'lib/assets/img1.png',
-      'Descrição',
+      'lib/assets/img2.png',
+      'Interior Inspiration',
     ),
     const House(
-      'lib/assets/img1.png',
-      'Descrição',
+      'lib/assets/img3.png',
+      'Modern Sofa Ideas',
     ),
     const House(
-      'lib/assets/img1.png',
-      'Descrição',
+      'lib/assets/img4.png',
+      'Modern Sofa Ideas',
     ),
     const House(
-      'lib/assets/img1.png',
-      'Descrição',
+      'lib/assets/img5.png',
+      'Living Room Inspiration',
     ),
     const House(
-      'lib/assets/img1.png',
-      'Descrição',
+      'lib/assets/img6.png',
+      'Interior Inspiration',
     ),
     const House(
-      'lib/assets/img1.png',
-      'Descrição',
+      'lib/assets/img7.png',
+      '',
     ),
     const House(
-      'lib/assets/img1.png',
-      'Descrição',
+      'lib/assets/img8.png',
+      '',
     ),
   ];
 

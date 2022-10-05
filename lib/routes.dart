@@ -1,3 +1,4 @@
+import 'package:avaliacaoflutter/routes/detail_page.dart';
 import 'package:avaliacaoflutter/routes/home_page.dart';
 import 'package:avaliacaoflutter/routes/item_page.dart';
 import 'package:avaliacaoflutter/routes/login_page.dart';
@@ -11,6 +12,8 @@ class RouterGenerator {
   static const String profilePage = '/profile';
   static const String infoPage = '/info';
   static const String itemPage = '/item';
+  static const String welcomePage = '/welcome';
+  static const String detailPage = '/detail';
 
   RouterGenerator._();
 
@@ -36,11 +39,10 @@ class RouterGenerator {
         return MaterialPageRoute(
           builder: (_) => ItemPage(),
         );
-
-      // case infoPage:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const InfoPage(),
-      //   );
+      case detailPage:
+        return MaterialPageRoute(
+          builder: (_) => const DetailPage(),
+        );
 
       default:
         throw const FormatException(

@@ -1,4 +1,5 @@
 import 'package:avaliacaoflutter/routes.dart';
+import 'package:avaliacaoflutter/routes/item_page.dart';
 import 'package:flutter/material.dart';
 import 'package:avaliacaoflutter/routes/home_page.dart';
 
@@ -72,7 +73,9 @@ class _ProfilePageState extends State<ProfilePage> {
               width: 300,
               height: 57,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RouterGenerator.detailPage);
+                },
                 child: Text(
                   'View Profile',
                   style: TextStyle(color: Color(0xff7156FF)),
@@ -115,8 +118,13 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             SizedBox(height: 40),
-            ListTile(
-              title: Text('About'),
+            InkWell(
+              child: ListTile(
+                title: Text('About'),
+              ),
+              onTap: () {
+                Navigator.of(context).pushNamed(RouterGenerator.itemPage);
+              },
             ),
             InkWell(
               child: ListTile(
@@ -141,7 +149,9 @@ class _ProfilePageState extends State<ProfilePage> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("lib/assets/icon-2.png")),
+            icon: ImageIcon(
+              AssetImage("lib/assets/icon-2.png"),
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
